@@ -1,3 +1,26 @@
+This is an experiment to try and create the similar effect to shown in [this example](https://www.youtube.com/watch?v=mCttdz_bivs)
+
+The example shown uses Google Docs, an editable source. This library will focus on static sources (like books or news article), something that is already written by someone else, and the user can make the annotations. 
+
+
+
+Some thoughts on a "final product":
+ - I prefer the ability to highlight, then right click to select annotation. 
+ - I would be ok with a "popup" button in the margin of page (similar to Google Doc)
+ - The library should be able to idenitfy where the highlight starts and ends.
+ - The  
+
+
+
+
+
+
+
+
+
+
+
+......................................
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
