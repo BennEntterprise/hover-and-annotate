@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+let sampleText = `This is a test paragraph that lasts more than one line. \n It will hopefully be the start of something new!! And something profitable!`
+
 function App() {
+  const [inputText, setInputText] = useState(sampleText)
+  const [highlightableText, setHighlightableText] = useState('')
+
+  const handleInputChange = e => {
+    const incomingText = e.target.value
+    setInputText(incomingText)
+  }
+
+  const convertToHighlightable = () => {
+    setHighlightableText(inputText)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Testing out a highlighting feature.</p>
+      <div className="main">
+        <textarea type="text" className="input-field" name="input-field" value={inputText} onChange={handleInputChange} />
+        <button type="button" className="magic-button" onClick={convertToHighlightable} >Magic Button</button>
+        <div className="text-output">{highlightableText && highlightableText.split(' ').map(word => <p className="highlightable">{word}</p>)}</div>
+      </div>
     </div>
   );
 }
